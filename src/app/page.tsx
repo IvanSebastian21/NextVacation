@@ -2,31 +2,43 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import DescubreCulturasFascinantes from './descubre-culturas-fascinantes/page'
 
 const carouselItems = [
   {
     image: 'https://catracalivre.com.br/wp-content/uploads/2024/01/salta-tolar-grande-01-1.jpg',
     legend: 'Explora lugares paradisíacos',
+    link: '/explora-lugares-paradisiacos',
   },
   {
     image: 'https://www.lavanguardia.com/files/og_thumbnail/files/fp/uploads/2022/01/28/61f3c17b4171c.r_d.1056-639-5666.jpeg',
     legend: 'Descubre culturas fascinantes',
+    link: '/descubre-culturas-fascinantes',
   },
   {
     image: 'https://eldiariodeviaje.ar/media/k2/items/cache/15812787389d5e520282cfe444c2e037_L.jpg',
     legend: 'Vive aventuras en la naturaleza',
+    link: '/vive-aventuras-en-la-naturaleza',
   },
   {
     image: 'https://www.clarin.com/img/2021/05/21/F_JceNUx8_720x0__1.jpg',
     legend: 'Disfruta de la gastronomía local',
+    link: '/disfruta-de-la-gastronomía-local',
   },
   {
     image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/29/84/5a/balcon-de-la-plaza.jpg?w=1200&h=-1&s=1',
     legend: 'Relájate en resorts de lujo',
+    link: '/relajate-en-resorts-de-lujo',
   },
   {
     image: 'https://www.equusargentina.com/wp-content/uploads/2021/08/cabalgata-salta-equus-argentina-1440x793-1.jpg',
     legend: 'Crea recuerdos inolvidables',
+    link: '/crea-recuerdos-inolvidables',
+  },
+  {
+    image: 'https://www.motofichas.com/images/articulos/ktm/890-adventure/ktm-890-adventure-accion.jpg',
+    legend: 'Viajes adventure',
+    link: '/viajes-adventure',
   },
 ]
 
@@ -66,15 +78,18 @@ export default function Home() {
               key={index}
               className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
                 }`}
+              style={{ pointerEvents: index === currentSlide ? 'auto' : 'none' }} // Deshabilitar clics en slides no visibles
             >
-              <img
-                src={item.image}
-                alt={`Slide ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
-                <p className="text-xl font-semibold">{item.legend}</p>
-              </div>
+              <Link href={item.link}>
+                <img
+                  src={item.image}
+                  alt={`Slide ${index + 1}`}
+                  className="w-full h-full object-cover cursor-pointer"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+                  <p className="text-xl font-semibold">{item.legend}</p>
+                </div>
+              </Link>
             </div>
           ))}
         </div>
@@ -108,6 +123,10 @@ export default function Home() {
             <p className="text-gray-600">Simplificamos el proceso para que disfrutes cada paso del camino.</p>
           </div>
         </div>
+
+        {/* Agregar el componente DescubreCulturasFascinantes aquí */}
+        <DescubreCulturasFascinantes />
+
       </main>
 
       <footer className="bg-gray-800 text-white py-6 mt-12">

@@ -15,8 +15,23 @@ const blogPosts = [
     title: "Viajando de forma sostenible: Guía para el viajero consciente",
     excerpt: "Aprende cómo puedes disfrutar de tus vacaciones mientras cuidas el planeta.",
     date: "2024-03-05"
+  },
+  {
+    title: "Rutas épicas en moto: Carretera y off-road para aventureros",
+    excerpt: "Explora las mejores rutas en moto, ya sea por carretera o en terrenos extremos.",
+    date: "2024-03-01"
+  },
+  {
+    title: "Viajes en auto: Las mejores rutas para un road trip inolvidable",
+    excerpt: "Descubre carreteras panorámicas y destinos ideales para viajar en coche.",
+    date: "2024-02-25"
+  },
+  {
+    title: "Escapadas de fin de semana: Destinos ideales para desconectar",
+    excerpt: "Lugares cercanos pero increíbles para una escapada rápida sin alejarse demasiado.",
+    date: "2024-02-20"
   }
-]
+];
 
 export default function Blog() {
   return (

@@ -6,7 +6,7 @@ interface UserData {
   username: string
   email: string
   authorities: { authority: string }[]
-  // Añade aquí otros campos que quieras utilizar
+  //TODO: Otros campos que quieras utilizar
   joinDate?: string
   vacationsPlanned?: number
 }
