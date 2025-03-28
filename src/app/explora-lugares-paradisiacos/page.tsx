@@ -3,6 +3,9 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import DescubreCulturasFascinantes from './../descubre-culturas-fascinantes/page'
+import DestinosQueSonTendencia from './../destinos-que-son-tendencia/page'
+import PlanificaTuAventura from './../planifica-tu-aventura/page'
+
 
 const carouselItems = [
   {
@@ -86,12 +89,12 @@ export default function ExploraLugaresParadisíacos() {
 
             {/* Efecto de gradiente más intenso en los costados */}
             <div
-        className="absolute top-0 left-0 w-full h-full"
-        style={{
-          background:
-            'linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 43%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.5) 90%)',
-        }}
-      ></div>
+              className="absolute top-0 left-0 w-full h-full"
+              style={{
+                background:
+                  'linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 43%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.5) 90%)',
+              }}
+            ></div>
 
             {/* Leyenda arriba del carrusel */}
             <Link href={item.link}>
@@ -152,13 +155,19 @@ export default function ExploraLugaresParadisíacos() {
         </div>
       </section>
 
-      {/* Agregar el componente DescubreCulturasFascinantes aquí */}
+      {/* Sección de Destinos que son tendencia */}
+      <DestinosQueSonTendencia />
+
+      {/* Sección de PlanificaTuAventura */}
+      <PlanificaTuAventura />
+
+      {/* Sección DescubreCulturasFascinantes */}
       <DescubreCulturasFascinantes />
 
       {/* Pie de página */}
       <footer className="bg-gray-800 text-white py-6 mt-12">
         <div className="container mx-auto px-6 text-center">
-          <p>&copy; 2025 Booking.com. Todos los derechos reservados.</p>
+          <p>&copy; 2025 TusVacacionesIdeales.com. Todos los derechos reservados.</p>
         </div>
       </footer>
     </div>
